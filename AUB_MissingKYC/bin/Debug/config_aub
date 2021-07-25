@@ -1,0 +1,15 @@
+[
+	{
+		"KycDumpfileFolder": "D:\\ACCPAGIBIGPH3\\AUB\\PACKUPDATA",
+		"BankDoneFolder": "D:\\ACCPAGIBIGPH3\\AUB\\PACKUPDATA\\DONE",
+		"BankForTransferFolder": "D:\\ACCPAGIBIGPH3\\AUB\\PACKUPDATA\\FOR_TRANSFER",
+		"DbaseConStr": "Server=10.88.77.71;Database=LCDB_01;User=allcard;Password=MarlboroLights#;",
+		"ReportStartDate": "12/31/2020",
+		"SftpHost": "192.168.252.62",
+		"SftpPort": "2222",
+		"SftpUser": "allcard",
+		"SftpPass": "@llc@rd_@ub",
+		"SftpSshHostKeyFingerprint": "ssh-rsa 2048 3a:ee:c9:6e:bb:ef:1f:b3:a6:8c:a3:8d:e6:83:04:8a",
+		"SftpRemotePath": "/",
+	}
+]

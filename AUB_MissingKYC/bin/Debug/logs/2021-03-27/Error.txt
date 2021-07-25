@@ -1,0 +1,4 @@
+2021-03-27 20:35:56.3209|ERROR|AUB_MissingKYC.SFTP.FileTransferred|03/27/2021 08:35:55 PM Timestamp of /Bayambang/test e/New folder (3)/109850000182.zip kept with its default (current time)
+2021-03-27 20:36:11.6712|ERROR|AUB_MissingKYC.SFTP.FileTransferred|03/27/2021 08:36:11 PM Timestamp of /Bayambang/test e/New folder (3)/109850000183.zip kept with its default (current time)
+2021-03-27 20:47:19.8757|ERROR|AUB_MissingKYC.SFTP.FileTransferred|03/27/2021 08:47:19 PM Timestamp of /Bayambang/test e/New folder43/109850000182.zip kept with its default (current time)
+2021-03-27 20:47:20.1157|ERROR|AUB_MissingKYC.SFTP.FileTransferred|03/27/2021 08:47:20 PM Timestamp of /Bayambang/test e/New folder43/109850000183.zip kept with its default (current time)

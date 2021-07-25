@@ -1,0 +1,19 @@
+2021-03-01 12:07:47.2583|INFO|AUB_MissingKYC.Form1.Form1_Load|Application started
+2021-03-01 12:08:07.3574|ERROR|AUB_MissingKYC.Form1.PrepExcelData|String was not recognized as a valid DateTime.
+2021-03-01 12:09:35.6233|INFO|AUB_MissingKYC.Form1.Form1_Load|Application started
+2021-03-01 12:14:33.3469|INFO|AUB_MissingKYC.Form1.Form1_Load|Application started
+2021-03-01 12:15:03.1745|INFO|AUB_MissingKYC.Form1.Form1_Load|Application started
+2021-03-01 12:15:19.1055|ERROR|AUB_MissingKYC.Form1.Init|Connection to database failed. A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+2021-03-01 12:16:25.1688|INFO|AUB_MissingKYC.Form1.Form1_Load|Application started
+2021-03-01 12:16:54.0000|ERROR|AUB_MissingKYC.Form1.Init|Connection to database failed. A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+2021-03-01 12:17:21.6441|INFO|AUB_MissingKYC.Form1.Form1_Load|Application started
+2021-03-01 12:18:02.0791|ERROR|AUB_MissingKYC.Form1.Init|Connection to database failed. A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+2021-03-01 12:19:54.8806|INFO|AUB_MissingKYC.Form1.Form1_Load|Application started
+2021-03-01 12:20:10.1524|ERROR|AUB_MissingKYC.Form1.Init|Connection to database failed. A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+2021-03-01 12:25:14.0642|INFO|AUB_MissingKYC.Form1.Form1_Load|Application started
+2021-03-01 12:27:51.7701|INFO|AUB_MissingKYC.Form1.Form1_Load|Application started
+2021-03-01 22:08:30.7569|INFO|AUB_MissingKYC.Form1.Form1_Load|Application started
+2021-03-01 22:09:00.0432|ERROR|AUB_MissingKYC.Form1.Init|Connection to database failed. A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+2021-03-01 22:13:22.6344|INFO|AUB_MissingKYC.Form1.Form1_Load|Application started
+2021-03-01 22:13:51.8256|ERROR|AUB_MissingKYC.Form1.Init|Connection to database failed. A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+2021-03-01 22:14:16.6520|INFO|AUB_MissingKYC.Form1.Form1_Load|Application started

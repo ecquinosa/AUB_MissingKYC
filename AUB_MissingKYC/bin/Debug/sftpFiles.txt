@@ -1,0 +1,7 @@
+3/19/2021 11:38:37 AM|/Bayambang/test e/DataCaptureFiles/|Folder
+3/19/2021 11:38:48 AM|/Bayambang/test e/DataCaptureFiles/20200407|Folder
+3/19/2021 11:39:16 AM|/Bayambang/test e/DataCaptureFiles/20200407|109850000185.zip|Size 197718
+3/19/2021 11:39:16 AM|/Bayambang/test e/DataCaptureFiles/20200407|109850000184.zip|Size 204610
+3/19/2021 11:39:22 AM|/Bayambang/test e/DataCaptureFiles/20210319|Folder
+3/19/2021 11:39:24 AM|/Bayambang/test e/DataCaptureFiles/20210319|109850000183.zip|Size 194117
+3/19/2021 11:39:24 AM|/Bayambang/test e/DataCaptureFiles/20210319|109850000182.zip|Size 202835

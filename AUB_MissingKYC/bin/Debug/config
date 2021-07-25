@@ -1,0 +1,15 @@
+[
+	{
+		"KycDumpfileFolder": "D:\\WORK\\PAGIBIG\\ACCPAGIBIGPH3\\AUB\\PACKUPDATA",
+		"BankDoneFolder": "D:\\WORK\\PAGIBIG\\ACCPAGIBIGPH3\\AUB\\PACKUPDATA\\DONE",
+		"BankForTransferFolder": "D:\\WORK\\PAGIBIG\\ACCPAGIBIGPH3\\AUB\\PACKUPDATA\\FOR_TRANSFER",
+		"DbaseConStr": "Server=10.88.77.71;Database=LCDB_01;User=allcard;Password=MarlboroLights#;",
+		"ReportStartDate": "12/31/2020",
+		"SftpHost": "sftp.allcardtech.com.ph",
+		"SftpPort": "2022",
+		"SftpUser": "bayambang",
+		"SftpPass": "Argon2016*",
+		"SftpSshHostKeyFingerprint": "ssh-ed25519 256 20:c3:ed:d6:8b:ef:83:0c:5f:e0:0b:58:78:93:6b:c6",
+		"SftpRemotePath": "/Bayambang/test e",
+	}
+]
