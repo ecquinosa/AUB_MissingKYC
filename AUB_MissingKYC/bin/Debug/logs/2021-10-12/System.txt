@@ -1,0 +1,15 @@
+2021-10-12 12:46:17.7915|INFO|AUB_MissingKYC.Form1.Form1_Load|Application started
+2021-10-12 12:46:46.9677|ERROR|AUB_MissingKYC.Form1.Init|Connection to database failed. A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+2021-10-12 12:47:02.2830|INFO|AUB_MissingKYC.Form1.Form1_Load|Application started
+2021-10-12 12:47:20.2757|ERROR|AUB_MissingKYC.Form1.PrepExcelData|Index and length must refer to a location within the string.
+Parameter name: length
+2021-10-12 12:47:44.9760|INFO|AUB_MissingKYC.Form1.Form1_Load|Application started
+2021-10-12 12:54:06.8266|ERROR|AUB_MissingKYC.Form1.PrepExcelData|Index and length must refer to a location within the string.
+Parameter name: length
+2021-10-12 12:56:40.1604|INFO|AUB_MissingKYC.Form1.Form1_Load|Application started
+2021-10-12 12:56:49.8640|ERROR|AUB_MissingKYC.Form1.PrepExcelData|The process cannot access the file 'D:\WORK\PAGIBIG\aub\PagIBIG_KYCChecking_20211011.xlsx' because it is being used by another process.
+2021-10-12 12:58:24.3103|INFO|AUB_MissingKYC.Form1.Form1_Load|Application started
+2021-10-12 12:58:30.5161|ERROR|AUB_MissingKYC.Form1.PrepExcelData|Can not open the package. Package is an OLE compound document. If this is an encrypted package, please supply the password
+2021-10-12 13:00:51.3494|INFO|AUB_MissingKYC.Form1.Form1_Load|Application started
+2021-10-12 13:02:37.4793|INFO|AUB_MissingKYC.Form1.Form1_Load|Application started
+2021-10-12 13:02:50.0716|INFO|AUB_MissingKYC.Form1.Form1_Load|Application started

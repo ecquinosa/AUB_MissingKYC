@@ -24,8 +24,7 @@ D:\WORK\Projects\AUB_MissingKYC\AUB_MissingKYC\bin\Debug\NLog.xml
 D:\WORK\Projects\AUB_MissingKYC\AUB_MissingKYC\obj\Debug\AUB_MissingKYC.Form1.resources
 D:\WORK\Projects\AUB_MissingKYC\AUB_MissingKYC\obj\Debug\AUB_MissingKYC.Properties.Resources.resources
 D:\WORK\Projects\AUB_MissingKYC\AUB_MissingKYC\obj\Debug\AUB_MissingKYC.csproj.GenerateResource.cache
-D:\WORK\Projects\AUB_MissingKYC\AUB_MissingKYC\obj\Debug\AUB_MissingKYC.csproj.CopyComplete
 D:\WORK\Projects\AUB_MissingKYC\AUB_MissingKYC\obj\Debug\AUB_MissingKYC.exe
 D:\WORK\Projects\AUB_MissingKYC\AUB_MissingKYC\obj\Debug\AUB_MissingKYC.pdb
 D:\WORK\Projects\AUB_MissingKYC\AUB_MissingKYC\obj\Debug\AUB_MissingKYC.csproj.CoreCompileInputs.cache
-D:\WORK\Projects\AUB_MissingKYC\AUB_MissingKYC\obj\Debug\AUB_MissingKYC.csprojAssemblyReference.cache
+D:\WORK\Projects\AUB_MissingKYC\AUB_MissingKYC\obj\Debug\AUB_MissingKYC.csproj.AssemblyReference.cache

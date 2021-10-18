@@ -76,9 +76,17 @@ namespace AUB_MissingKYC
 
                     foreach (DataRow r in dt.Rows)
                     {
-                        string d = r["date"].ToString();
-                        r["date"] = d.Substring(0, 4) + "-" + d.Substring(4, 2) + "-" + d.Substring(6, 2);
-                        r.AcceptChanges();
+                        if (r["idno"].ToString().Trim() != "")
+                        {
+                            string d = r["date"].ToString();
+                            r["date"] = d.Substring(0, 4) + "-" + d.Substring(4, 2) + "-" + d.Substring(6, 2);
+                            r.AcceptChanges();
+                        }
+                        //Console.WriteLine(r["idno"].ToString());
+                        //if (r["idno"].ToString().Trim() == "121085790074")
+                        //{
+                        //    Console.WriteLine(r["idno"].ToString());
+                        //}                        
                     }
 
                     var groupedData = from b in dt.AsEnumerable()
@@ -235,7 +243,7 @@ namespace AUB_MissingKYC
 
                     //string missingFilesFolder = string.Format(@"{0}\{1}_MISSINGFILES", config.BankForTransferFolder, DateTime.Now.ToString("MMddyyyy"));
                   
-                    if (dal.GetEntryDateByMID(rw[midColumn].ToString()))
+                    if (dal.GetEntryDateByMID(rw[midColumn].ToString().Trim()))
                     {
                         //if (dal.ObjectResult == null) rw["Remark"] = "No data in member table";
                         if (dal.TableResult.DefaultView.Count == 0) rw["Remark"] = "No data in member table";
@@ -251,11 +259,11 @@ namespace AUB_MissingKYC
 
                             while (condDate <= endDate)
                             {
-                                zipFolder = string.Format(@"{0}\{1}\{2}.zip", config.BankDoneFolder, condDate.ToString("yyyy-MM-dd"), rw[midColumn].ToString());
+                                zipFolder = string.Format(@"{0}\{1}\{2}.zip", config.BankDoneFolder, condDate.ToString("yyyy-MM-dd"), rw[midColumn].ToString().Trim());
                                 zipFolder2 = zipFolder;
                                 if (File.Exists(zipFolder))
                                 {
-                                    zipFolder = "Transferred on " + condDate.ToShortDateString();
+                                    zipFolder = "Transferred on " + condDate.ToShortDateString() + " and " + missingFilesFolder + " sftp folders";
 
                                     break;
                                 }
@@ -264,7 +272,10 @@ namespace AUB_MissingKYC
 
                             if (zipFolder != "")
                                 rw["Remark"] = zipFolder;
-                            else rw["Remark"] = entryDate.ToShortDateString();                            
+                            else rw["Remark"] = entryDate.ToShortDateString();
+
+                            if (rw["Remark"].ToString().Contains("\\DONE\\")) rw["Remark"] = "Transferred on " + missingFilesFolder + " sftp folder";
+
 
                             if (File.Exists(zipFolder2))
                             {
@@ -279,12 +290,12 @@ namespace AUB_MissingKYC
                                     {
                                         var response = ws.ManualPackUpData(dal.TableResult.Rows[0]["RefNum"].ToString(), "");
                                         if (!response.IsSuccess)
-                                            logger.Error("Failed to extract RefNum " + dal.TableResult.Rows[0]["RefNum"].ToString() + " MID " + rw[midColumn].ToString() + ". ManualPackUpData error " + response.ErrorMessage);
+                                            logger.Error("Failed to extract RefNum " + dal.TableResult.Rows[0]["RefNum"].ToString() + " MID " + rw[midColumn].ToString().Trim() + ". ManualPackUpData error " + response.ErrorMessage);
                                     }
                                     }
                                 catch (Exception ex)
                                 {
-                                    logger.Error("Failed to extract RefNum " + dal.TableResult.Rows[0]["RefNum"].ToString() + " MID " + rw[midColumn].ToString() + ". ManualPackUpData error " + ex.Message);
+                                    logger.Error("Failed to extract RefNum " + dal.TableResult.Rows[0]["RefNum"].ToString() + " MID " + rw[midColumn].ToString().Trim() + ". ManualPackUpData error " + ex.Message);
                                 }
                             }
                         }
@@ -292,7 +303,7 @@ namespace AUB_MissingKYC
                     else
                     {
                         rw["Remark"] = "Db error";
-                        logger.Error("MID " + rw[midColumn].ToString() + ". Error " + dal.ErrorMessage);
+                        logger.Error("MID " + rw[midColumn].ToString().Trim() + ". Error " + dal.ErrorMessage);
                     }
 
                     rw.AcceptChanges();                    
