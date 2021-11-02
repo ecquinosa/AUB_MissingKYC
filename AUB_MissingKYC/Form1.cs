@@ -263,7 +263,7 @@ namespace AUB_MissingKYC
                                 zipFolder2 = zipFolder;
                                 if (File.Exists(zipFolder))
                                 {
-                                    zipFolder = "Transferred on " + condDate.ToShortDateString() + " and " + missingFilesFolder + " sftp folders";
+                                    zipFolder = "Transferred to " + condDate.ToShortDateString() + " and " + missingFilesFolder.Substring(missingFilesFolder.LastIndexOf("\\") + 1) + " sftp folders";
 
                                     break;
                                 }
@@ -274,7 +274,7 @@ namespace AUB_MissingKYC
                                 rw["Remark"] = zipFolder;
                             else rw["Remark"] = entryDate.ToShortDateString();
 
-                            if (rw["Remark"].ToString().Contains("\\DONE\\")) rw["Remark"] = "Transferred on " + missingFilesFolder + " sftp folder";
+                            if (rw["Remark"].ToString().Contains("\\DONE\\")) rw["Remark"] = "Transferred to " + missingFilesFolder.Substring(missingFilesFolder.LastIndexOf("\\") + 1) + " sftp folder";
 
 
                             if (File.Exists(zipFolder2))
