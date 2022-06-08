@@ -39,6 +39,7 @@
             this.chkForce = new System.Windows.Forms.CheckBox();
             this.btnMove = new System.Windows.Forms.Button();
             this.btnTransferToSftp = new System.Windows.Forms.Button();
+            this.chkSelectAll = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid2)).BeginInit();
             this.SuspendLayout();
@@ -87,12 +88,12 @@
             this.grid.AllowUserToDeleteRows = false;
             this.grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid.Location = new System.Drawing.Point(12, 96);
+            this.grid.Location = new System.Drawing.Point(12, 118);
             this.grid.Name = "grid";
             this.grid.ReadOnly = true;
             this.grid.RowHeadersWidth = 51;
             this.grid.RowTemplate.Height = 24;
-            this.grid.Size = new System.Drawing.Size(360, 506);
+            this.grid.Size = new System.Drawing.Size(360, 484);
             this.grid.TabIndex = 11;
             this.grid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grid_CellMouseDoubleClick);
             // 
@@ -102,12 +103,12 @@
             this.grid2.AllowUserToDeleteRows = false;
             this.grid2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.grid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid2.Location = new System.Drawing.Point(378, 96);
+            this.grid2.Location = new System.Drawing.Point(378, 118);
             this.grid2.Name = "grid2";
             this.grid2.ReadOnly = true;
             this.grid2.RowHeadersWidth = 51;
             this.grid2.RowTemplate.Height = 24;
-            this.grid2.Size = new System.Drawing.Size(500, 506);
+            this.grid2.Size = new System.Drawing.Size(500, 484);
             this.grid2.TabIndex = 12;
             // 
             // lblTotal
@@ -161,11 +162,23 @@
             this.btnTransferToSftp.UseVisualStyleBackColor = true;
             this.btnTransferToSftp.Click += new System.EventHandler(this.btnTransferToSftp_Click);
             // 
+            // chkSelectAll
+            // 
+            this.chkSelectAll.AutoSize = true;
+            this.chkSelectAll.Location = new System.Drawing.Point(12, 84);
+            this.chkSelectAll.Name = "chkSelectAll";
+            this.chkSelectAll.Size = new System.Drawing.Size(93, 21);
+            this.chkSelectAll.TabIndex = 18;
+            this.chkSelectAll.Text = "Select All";
+            this.chkSelectAll.UseVisualStyleBackColor = true;
+            this.chkSelectAll.CheckedChanged += new System.EventHandler(this.chkSelectAll_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 707);
+            this.Controls.Add(this.chkSelectAll);
             this.Controls.Add(this.btnTransferToSftp);
             this.Controls.Add(this.btnMove);
             this.Controls.Add(this.chkForce);
@@ -205,6 +218,7 @@
         private System.Windows.Forms.CheckBox chkForce;
         private System.Windows.Forms.Button btnMove;
         private System.Windows.Forms.Button btnTransferToSftp;
+        private System.Windows.Forms.CheckBox chkSelectAll;
     }
 }
 

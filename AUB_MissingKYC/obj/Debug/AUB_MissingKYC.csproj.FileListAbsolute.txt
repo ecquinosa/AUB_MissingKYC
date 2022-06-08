@@ -28,3 +28,4 @@ D:\WORK\Projects\AUB_MissingKYC\AUB_MissingKYC\obj\Debug\AUB_MissingKYC.exe
 D:\WORK\Projects\AUB_MissingKYC\AUB_MissingKYC\obj\Debug\AUB_MissingKYC.pdb
 D:\WORK\Projects\AUB_MissingKYC\AUB_MissingKYC\obj\Debug\AUB_MissingKYC.csproj.CoreCompileInputs.cache
 D:\WORK\Projects\AUB_MissingKYC\AUB_MissingKYC\obj\Debug\AUB_MissingKYC.csproj.AssemblyReference.cache
+D:\WORK\Projects\AUB_MissingKYC\AUB_MissingKYC\obj\Debug\AUB_MissingKYC.csproj.CopyComplete

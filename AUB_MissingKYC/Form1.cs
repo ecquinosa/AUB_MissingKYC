@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using OfficeOpenXml;
+using System.Threading;
 
 namespace AUB_MissingKYC
 {
@@ -52,7 +53,7 @@ namespace AUB_MissingKYC
             }
         }
 
-        public void PrepExcelData(string FilePath)
+        public void PrepExcelData()
         {
             try
             {
@@ -66,27 +67,31 @@ namespace AUB_MissingKYC
                 else dtDateGroup.Clear();
 
 
-                FileInfo existingFile = new FileInfo(FilePath);
+                FileInfo existingFile = new FileInfo(txtExcelFile.Text);
                 using (ExcelPackage package = new ExcelPackage(existingFile))
                 {
                     // get the first worksheet in the workbook
                     ExcelWorksheet worksheet = package.Workbook.Worksheets[1];
 
-                    dt = ToDataTable(package.Workbook.Worksheets[1], true);
+                    dt = ToDataTable(package.Workbook.Worksheets["Grid Results"], true);
 
                     foreach (DataRow r in dt.Rows)
                     {
                         if (r["idno"].ToString().Trim() != "")
                         {
+                            //if (r["idno"].ToString().Trim() == "HMDF20220221082323")
+                            //{
+                            //    Console.WriteLine(r["idno"].ToString());
+                            //}
+
                             string d = r["date"].ToString();
                             r["date"] = d.Substring(0, 4) + "-" + d.Substring(4, 2) + "-" + d.Substring(6, 2);
-                            r.AcceptChanges();
+                            DateTime dtTemp;
+                            if(DateTime.TryParse(r["date"].ToString(), out dtTemp)) r.AcceptChanges();
+                            logger.Error(string.Format("Date of id {0} is invalid - {1}", r["idno"].ToString(), r["date"].ToString()));
                         }
                         //Console.WriteLine(r["idno"].ToString());
-                        //if (r["idno"].ToString().Trim() == "121085790074")
-                        //{
-                        //    Console.WriteLine(r["idno"].ToString());
-                        //}                        
+                        
                     }
 
                     var groupedData = from b in dt.AsEnumerable()
@@ -116,7 +121,8 @@ namespace AUB_MissingKYC
             catch (Exception ex)
             {
                 logger.Error(ex.Message);
-                throw new Exception();
+                Utilities.ShowErrorMessage(ex.Message,this.Text);
+                //throw new Exception();
             }
         }
 
@@ -127,12 +133,21 @@ namespace AUB_MissingKYC
                 tbl.Columns.Add(hasHeaderRow ?
                     firstRowCell.Text : string.Format("Column {0}", firstRowCell.Start.Column));
             var startRow = hasHeaderRow ? 2 : 1;
-            for (var rowNum = startRow; rowNum <= ws.Dimension.End.Row; rowNum++)
+            try
             {
-                var wsRow = ws.Cells[rowNum, 1, rowNum, ws.Dimension.End.Column];
-                var row = tbl.NewRow();
-                foreach (var cell in wsRow) row[cell.Start.Column - 1] = cell.Text;
-                tbl.Rows.Add(row);
+                for (var rowNum = startRow; rowNum <= ws.Dimension.End.Row; rowNum++)
+                {
+
+                    var wsRow = ws.Cells[rowNum, 1, rowNum, ws.Dimension.End.Column];
+                    var row = tbl.NewRow();
+                    foreach (var cell in wsRow) row[cell.Start.Column - 1] = cell.Text;
+                    tbl.Rows.Add(row);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex.Message);
             }
             return tbl;
         }
@@ -146,7 +161,8 @@ namespace AUB_MissingKYC
                 btnGenerate.Enabled = false;
 
                 this.Cursor = Cursors.WaitCursor;
-                PrepExcelData(txtExcelFile.Text);
+                Thread th = new Thread(new ThreadStart(PrepExcelData));
+                th.Start();
                 this.Cursor = Cursors.Default;
 
                 btnGenerate.Enabled = true;
@@ -166,6 +182,18 @@ namespace AUB_MissingKYC
             if (isExist) dateList.Remove(selectedDate); else dateList.Add(selectedDate);
             dtDateGroup.Select("Date='" + selectedDate + "'")[0]["IsSelected"] = !isExist;
 
+            BindGrids();
+        }
+
+        private void SelectUnSelectAll(bool bln)
+        { 
+            foreach (DataRow rw in dtDateGroup.Rows)
+            {            
+                if (!bln) dateList.Remove(rw["Date"].ToString()); else dateList.Add(rw["Date"].ToString());
+                rw["IsSelected"]= bln;
+                rw.AcceptChanges();
+            }
+            dtDateGroup.AcceptChanges();
             BindGrids();
         }
 
@@ -629,6 +657,11 @@ namespace AUB_MissingKYC
                 sr.Dispose();
                 sr.Close();
             }
+        }
+
+        private void chkSelectAll_CheckedChanged(object sender, EventArgs e)
+        {
+            SelectUnSelectAll(chkSelectAll.Checked);
         }
     }
 }
